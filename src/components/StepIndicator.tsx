@@ -36,7 +36,7 @@ const StepIndicator = () => {
       <div className="flex items-center justify-center">
         {steps.map((step, i) => (
           <React.Fragment key={step.id}>
-            {/* Step circle */}
+            {/* Step circle with number */}
             <div 
               className={`w-10 h-10 flex items-center justify-center rounded-full border-2 transition-all duration-300 ${
                 currentStep === step.id 
@@ -50,8 +50,8 @@ const StepIndicator = () => {
               {step.id}
             </div>
             
-            {/* Step name */}
-            <div className="absolute mt-16 text-sm font-cinzel text-wizard-gold/70">
+            {/* Step name - positioned below the circle */}
+            <div className="absolute mt-16 text-xs md:text-sm font-cinzel text-wizard-gold/70 w-20 text-center">
               {step.name}
             </div>
             
@@ -64,6 +64,8 @@ const StepIndicator = () => {
           </React.Fragment>
         ))}
       </div>
+      {/* Add extra space below the step indicators to prevent overlap with content */}
+      <div className="h-10"></div>
     </div>
   );
 };
