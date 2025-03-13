@@ -54,7 +54,7 @@ const StepIndicator = () => {
             </div>
             
             {/* Step name - positioned precisely below the circle */}
-            <div className="mt-3 text-xs md:text-sm font-cinzel text-wizard-gold/70 absolute -left-5 w-20 text-center transform -translate-x-1/2 translate-x-10 mx-0 my-[52px]">
+            <div className="mt-3 text-xs md:text-sm font-cinzel text-wizard-gold/70 absolute -left-5 w-20 text-center transform -translate-x-1/2 translate-x-10 mx-px my-[52px]">
               {step.name}
             </div>
           </div>)}
