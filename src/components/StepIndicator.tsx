@@ -35,7 +35,7 @@ const StepIndicator = () => {
     <div className="py-6">
       <div className="flex items-center justify-center">
         {steps.map((step, i) => (
-          <div key={step.id} className="flex flex-col items-center">
+          <div key={step.id} className="flex flex-col items-center relative">
             <div className="flex items-center">
               {/* Step circle with number */}
               <div 
@@ -59,15 +59,15 @@ const StepIndicator = () => {
               )}
             </div>
             
-            {/* Step name - positioned below the circle */}
-            <div className="mt-3 text-xs md:text-sm font-cinzel text-wizard-gold/70 w-20 text-center">
+            {/* Step name - positioned precisely below the circle */}
+            <div className="mt-3 text-xs md:text-sm font-cinzel text-wizard-gold/70 absolute -left-5 w-20 text-center transform -translate-x-1/2 translate-x-10">
               {step.name}
             </div>
           </div>
         ))}
       </div>
       {/* Add extra space below the step indicators to prevent overlap with content */}
-      <div className="h-10"></div>
+      <div className="h-14"></div>
     </div>
   );
 };
