@@ -35,33 +35,35 @@ const StepIndicator = () => {
     <div className="py-6">
       <div className="flex items-center justify-center">
         {steps.map((step, i) => (
-          <React.Fragment key={step.id}>
-            {/* Step circle with number */}
-            <div 
-              className={`w-10 h-10 flex items-center justify-center rounded-full border-2 transition-all duration-300 ${
-                currentStep === step.id 
-                  ? 'border-wizard-gold bg-wizard-gold/20 text-wizard-gold' 
-                  : currentStep > step.id 
-                    ? 'border-wizard-gold/70 bg-wizard-gold/10 text-wizard-gold/70' 
-                    : 'border-wizard-gold/30 text-wizard-gold/50'
-              } ${canNavigateToStep(step.id) ? 'cursor-pointer' : 'cursor-not-allowed opacity-50'}`}
-              onClick={() => canNavigateToStep(step.id) && setCurrentStep(step.id)}
-            >
-              {step.id}
+          <div key={step.id} className="flex flex-col items-center">
+            <div className="flex items-center">
+              {/* Step circle with number */}
+              <div 
+                className={`w-10 h-10 flex items-center justify-center rounded-full border-2 transition-all duration-300 ${
+                  currentStep === step.id 
+                    ? 'border-wizard-gold bg-wizard-gold/20 text-wizard-gold' 
+                    : currentStep > step.id 
+                      ? 'border-wizard-gold/70 bg-wizard-gold/10 text-wizard-gold/70' 
+                      : 'border-wizard-gold/30 text-wizard-gold/50'
+                } ${canNavigateToStep(step.id) ? 'cursor-pointer' : 'cursor-not-allowed opacity-50'}`}
+                onClick={() => canNavigateToStep(step.id) && setCurrentStep(step.id)}
+              >
+                {step.id}
+              </div>
+              
+              {/* Connector line */}
+              {i < steps.length - 1 && (
+                <div className={`w-16 h-0.5 ${
+                  currentStep > step.id ? 'bg-wizard-gold/70' : 'bg-wizard-gold/20'
+                }`} />
+              )}
             </div>
             
             {/* Step name - positioned below the circle */}
-            <div className="absolute mt-16 text-xs md:text-sm font-cinzel text-wizard-gold/70 w-20 text-center">
+            <div className="mt-3 text-xs md:text-sm font-cinzel text-wizard-gold/70 w-20 text-center">
               {step.name}
             </div>
-            
-            {/* Connector line */}
-            {i < steps.length - 1 && (
-              <div className={`w-16 h-0.5 ${
-                currentStep > step.id ? 'bg-wizard-gold/70' : 'bg-wizard-gold/20'
-              }`} />
-            )}
-          </React.Fragment>
+          </div>
         ))}
       </div>
       {/* Add extra space below the step indicators to prevent overlap with content */}
