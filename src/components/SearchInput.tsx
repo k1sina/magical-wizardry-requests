@@ -42,7 +42,7 @@ const SearchInput = () => {
   return <div className="w-full max-w-2xl mx-auto relative">
       <div className="flex items-center space-x-2 w-full border border-wizard-gold/30 rounded-full overflow-hidden bg-wizard-dark-alt/60 backdrop-blur">
         <input type="text" value={query} onChange={e => setQuery(e.target.value)} placeholder="Describe what is your need..." className="font-cormorant text-lg px-6 py-3 w-full bg-transparent border-none focus:ring-0 focus:outline-none" onKeyDown={e => e.key === 'Enter' && handleSearch()} />
-        <button onClick={handleSearch} className="bg-wizard-gold rounded-full font-cinzel text-wizard-dark px-6 py-2 mr-2 hover:bg-wizard-gold-light transition-colors mx-[8px]">
+        <button onClick={handleSearch} className="bg-wizard-gold rounded-full font-cinzel text-wizard-dark px-6 py-2 mr-2 hover:bg-wizard-gold-light transition-colors mx-[7px]">
           Find
         </button>
       </div>
