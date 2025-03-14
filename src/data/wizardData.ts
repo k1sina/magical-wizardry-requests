@@ -1,3 +1,4 @@
+
 import { MagicCategory, SubService, MagicType, PowerLevel } from '../contexts/WizardContext';
 
 export const categories: MagicCategory[] = [
@@ -6,7 +7,7 @@ export const categories: MagicCategory[] = [
     title: 'Curse Removal',
     subtitle: 'Lifting negative energy and breaking hexes',
     description: 'Our specialists can detect, analyze, and remove curses of varying intensities, from minor jinxes to ancient familial hexes.',
-    image: '/public/magicCategories/curse-removal.jpg',
+    image: '/magicCategories/curse-removal.jpg',
     priceRange: '$50 - $500'
   },
   {
@@ -14,7 +15,7 @@ export const categories: MagicCategory[] = [
     title: 'Summoning Rituals',
     subtitle: 'Calling supernatural entities or forces',
     description: 'Carefully conducted rituals to summon and communicate with otherworldly entities, spirits, or elemental forces.',
-    image: '/public/magicCategories/summoning-rituals.jpg',
+    image: '/magicCategories/summoning-rituals.jpg',
     priceRange: '$100 - $1,000'
   },
   {
@@ -22,7 +23,7 @@ export const categories: MagicCategory[] = [
     title: 'Potion Crafting',
     subtitle: 'Brewing magical elixirs and concoctions',
     description: 'Custom-crafted potions for healing, enhancement, transformation, or specialized magical effects.',
-    image: '/public/magicCategories/potion-crafting.jpg',
+    image: '/magicCategories/potion-crafting.jpg',
     priceRange: '$20 - $300'
   },
   {
@@ -30,7 +31,7 @@ export const categories: MagicCategory[] = [
     title: 'Enchanted Object Repairs',
     subtitle: 'Restoring magical items and artifacts',
     description: 'Professional restoration and repair of enchanted items, from simple charms to ancient powerful artifacts.',
-    image: '/public/magicCategories/enchanted-object repairs.jpg',
+    image: '/magicCategories/enchanted-object repairs.jpg',
     priceRange: '$75 - $600'
   },
   {
@@ -38,7 +39,7 @@ export const categories: MagicCategory[] = [
     title: 'Illusions & Disguises',
     subtitle: 'Trickery and perception alteration',
     description: 'Create convincing illusions or alter your appearance temporarily for various purposes.',
-    image: '/public/magicCategories/illusions-disguises.jpg',
+    image: '/magicCategories/illusions-disguises.jpg',
     priceRange: '$80 - $700'
   },
   {
@@ -46,7 +47,7 @@ export const categories: MagicCategory[] = [
     title: 'Elemental Manipulation',
     subtitle: 'Controlling natural forces',
     description: 'Harness the power of air, fire, water, and earth for practical purposes or impressive displays.',
-    image: '/public/magicCategories/elemental-manipulation.jpg',
+    image: '/magicCategories/elemental-manipulation.jpg',
     priceRange: '$120 - $1,500'
   },
   {
@@ -54,7 +55,7 @@ export const categories: MagicCategory[] = [
     title: 'Necromancy Assistance',
     subtitle: 'Communing with spiritual energies',
     description: 'Ethical practices for communicating with departed spirits or harnessing life force energies.',
-    image: '/public/magicCategories/necromancy-assistance.jpg',
+    image: '/magicCategories/necromancy-assistance.jpg',
     priceRange: '$150 - $2,000'
   },
   {
@@ -62,7 +63,7 @@ export const categories: MagicCategory[] = [
     title: 'Divination & Prophecy',
     subtitle: 'Seeing beyond the veil of time',
     description: 'Glimpse into potential futures, find lost objects, or seek guidance on important decisions.',
-    image: '/public/magicCategories/divination.jpg',
+    image: '/magicCategories/divination.jpg',
     priceRange: '$40 - $500'
   }
 ];
@@ -298,37 +299,37 @@ export const magicTypes: MagicType[] = [
     id: 'elemental',
     name: 'Elemental',
     description: 'Magic that manipulates the four primal elements: earth, air, fire, and water.',
-    image: '/public/magicTypes/elemental.jpg'
+    image: '/magicTypes/elemental.jpg'
   },
   {
     id: 'necromancy',
     name: 'Necromancy',
     description: 'Magic involving spirits, ghosts, and the essence of life and death.',
-    image: '/public/magicTypes/necromancy.jpg'
+    image: '/magicTypes/necromancy.jpg'
   },
   {
     id: 'illusion',
     name: 'Illusion',
     description: 'Magic that alters perception and creates convincing deceptions.',
-    image: '/public/magicTypes/illusion.jpg'
+    image: '/magicTypes/illusion.jpg'
   },
   {
     id: 'alchemy',
     name: 'Alchemy',
     description: 'Magic focused on transformation through potions, elixirs, and material transmutation.',
-    image: '/public/magicTypes/alchemy.jpg'
+    image: '/magicTypes/alchemy.jpg'
   },
   {
     id: 'divination',
     name: 'Divination',
     description: 'Magic that reveals hidden knowledge, glimpses the future, or finds lost things.',
-    image: '/public/magicTypes/divination.jpg'
+    image: '/magicTypes/divination.jpg'
   },
   {
     id: 'transformation',
     name: 'Transformation',
     description: 'Magic that changes form, function, or essential qualities of beings or objects.',
-    image: '/public/magicTypes/transformation.jpg'
+    image: '/magicTypes/transformation.jpg'
   }
 ];
 
@@ -337,21 +338,21 @@ export const powerLevels: PowerLevel[] = [
     id: 'apprentice',
     name: 'Apprentice',
     description: 'Entry-level magical services, suitable for minor issues and simple enchantments.',
-    image: '/public/magicLevels/apprentice.jpg',
+    image: '/magicLevels/apprentice.jpg',
     multiplier: 1.0
   },
   {
     id: 'master',
     name: 'Master',
     description: 'Advanced services by experienced wizards, appropriate for complex magical needs.',
-    image: '/public/magicLevels/master.jpg',
+    image: '/magicLevels/master.jpg',
     multiplier: 1.5
   },
   {
     id: 'archmage',
     name: 'Archmage',
     description: 'Elite services by our most powerful practitioners, for the most demanding magical requirements.',
-    image: '/public/magicLevels/archmage.jpg',
+    image: '/magicLevels/archmage.jpg',
     multiplier: 2.5
   }
 ];

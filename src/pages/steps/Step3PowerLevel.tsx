@@ -30,6 +30,9 @@ const Step3PowerLevel = () => {
             Math.round(bookingDetails.subService.price * level.multiplier) : 
             0;
           
+          // Create the correct image path by removing '/public' if it exists
+          const imagePath = level.image.replace('/public', '');
+          
           return (
             <div 
               key={level.id}
@@ -40,7 +43,7 @@ const Step3PowerLevel = () => {
             >
               <div className="w-full h-40 overflow-hidden rounded mb-4">
                 <img 
-                  src={level.image} 
+                  src={imagePath} 
                   alt={level.name} 
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />

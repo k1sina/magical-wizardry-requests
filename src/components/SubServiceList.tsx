@@ -22,6 +22,9 @@ const SubServiceList = ({
   if (!services || services.length === 0) {
     return null;
   }
+  
+  // Create the correct image path by removing '/public' if it exists
+  const imagePath = categoryImage.replace('/public', '');
 
   return (
     <div className="bg-wizard-dark-alt/30 border border-wizard-gold/20 rounded-lg overflow-hidden animate-fade-in mt-12">
@@ -29,7 +32,7 @@ const SubServiceList = ({
         {/* Left column with image */}
         <div className="h-[400px] overflow-hidden">
           <img
-            src={categoryImage}
+            src={imagePath}
             alt={categoryTitle}
             className="w-full h-full object-cover"
           />

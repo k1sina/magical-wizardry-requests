@@ -9,6 +9,9 @@ type CategoryCardProps = {
 };
 
 const CategoryCard = ({ category, isSelected, onSelect }: CategoryCardProps) => {
+  // Create the correct image path by removing '/public' if it exists
+  const imagePath = category.image.replace('/public', '');
+  
   return (
     <div 
       className={`wizard-card h-64 cursor-pointer transition-all duration-300 ${isSelected ? 'wizard-card-selected ring-2 ring-wizard-gold' : 'hover:border-wizard-gold/60'}`}
@@ -18,7 +21,7 @@ const CategoryCard = ({ category, isSelected, onSelect }: CategoryCardProps) => 
     >
       <div className="w-full h-36 overflow-hidden rounded mb-3">
         <img 
-          src={category.image} 
+          src={imagePath} 
           alt={category.title} 
           className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
         />

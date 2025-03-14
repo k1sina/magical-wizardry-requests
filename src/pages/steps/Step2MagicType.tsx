@@ -26,6 +26,8 @@ const Step2MagicType = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
         {magicTypes.map((magicType) => {
           const isRecommended = recommendedMagicTypes.includes(magicType.id);
+          // Create the correct image path by removing '/public' if it exists
+          const imagePath = magicType.image.replace('/public', '');
           
           return (
             <div 
@@ -37,7 +39,7 @@ const Step2MagicType = () => {
             >
               <div className="w-full h-40 overflow-hidden rounded mb-4">
                 <img 
-                  src={magicType.image} 
+                  src={imagePath} 
                   alt={magicType.name} 
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
