@@ -1,4 +1,3 @@
-
 import { MagicCategory, SubService, MagicType, PowerLevel } from '../contexts/WizardContext';
 
 export const categories: MagicCategory[] = [
@@ -7,48 +6,64 @@ export const categories: MagicCategory[] = [
     title: 'Curse Removal',
     subtitle: 'Lifting negative energy and breaking hexes',
     description: 'Our specialists can detect, analyze, and remove curses of varying intensities, from minor jinxes to ancient familial hexes.',
-    image: '/lovable-uploads/3f3e5ee8-5862-49d7-a3cd-dc904b7bf0c3.png',
-    priceRange: '100-500'
+    image: '/public/magicCategories/curse-removal.jpg',
+    priceRange: '$50 - $500'
   },
   {
     id: 'summoning-rituals',
     title: 'Summoning Rituals',
     subtitle: 'Calling supernatural entities or forces',
     description: 'Carefully conducted rituals to summon and communicate with otherworldly entities, spirits, or elemental forces.',
-    image: '/lovable-uploads/4cf9ee77-0204-4b8e-b33d-708ced040870.png',
-    priceRange: '200-800'
+    image: '/public/magicCategories/summoning-rituals.jpg',
+    priceRange: '$100 - $1,000'
   },
   {
-    id: 'elemental-manipulation',
-    title: 'Elemental Manipulation',
-    subtitle: 'Controlling natural forces',
-    description: 'Harness the power of air, fire, water, and earth for practical purposes or impressive displays.',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-    priceRange: '150-700'
+    id: 'potion-crafting',
+    title: 'Potion Crafting',
+    subtitle: 'Brewing magical elixirs and concoctions',
+    description: 'Custom-crafted potions for healing, enhancement, transformation, or specialized magical effects.',
+    image: '/public/magicCategories/potion-crafting.jpg',
+    priceRange: '$20 - $300'
+  },
+  {
+    id: 'enchanted-object-repairs',
+    title: 'Enchanted Object Repairs',
+    subtitle: 'Restoring magical items and artifacts',
+    description: 'Professional restoration and repair of enchanted items, from simple charms to ancient powerful artifacts.',
+    image: '/public/magicCategories/enchanted-object repairs.jpg',
+    priceRange: '$75 - $600'
   },
   {
     id: 'illusions-disguises',
     title: 'Illusions & Disguises',
     subtitle: 'Trickery and perception alteration',
     description: 'Create convincing illusions or alter your appearance temporarily for various purposes.',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-    priceRange: '120-600'
+    image: '/public/magicCategories/illusions-disguises.jpg',
+    priceRange: '$80 - $700'
+  },
+  {
+    id: 'elemental-manipulation',
+    title: 'Elemental Manipulation',
+    subtitle: 'Controlling natural forces',
+    description: 'Harness the power of air, fire, water, and earth for practical purposes or impressive displays.',
+    image: '/public/magicCategories/elemental-manipulation.jpg',
+    priceRange: '$120 - $1,500'
+  },
+  {
+    id: 'necromancy-assistance',
+    title: 'Necromancy Assistance',
+    subtitle: 'Communing with spiritual energies',
+    description: 'Ethical practices for communicating with departed spirits or harnessing life force energies.',
+    image: '/public/magicCategories/necromancy-assistance.jpg',
+    priceRange: '$150 - $2,000'
   },
   {
     id: 'divination',
-    title: 'Divination',
+    title: 'Divination & Prophecy',
     subtitle: 'Seeing beyond the veil of time',
     description: 'Glimpse into potential futures, find lost objects, or seek guidance on important decisions.',
-    image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-    priceRange: '90-450'
-  },
-  {
-    id: 'alchemy',
-    title: 'Alchemy',
-    subtitle: 'Transformative potions and elixirs',
-    description: 'Commission custom potions for healing, enhancement, or transformation.',
-    image: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-    priceRange: '200-900'
+    image: '/public/magicCategories/divination.jpg',
+    priceRange: '$40 - $500'
   }
 ];
 
@@ -59,89 +74,222 @@ export const subServices: SubService[] = [
     category: 'curse-removal',
     magicTypes: ['divination', 'illusion'],
     powerLevel: 'apprentice',
-    price: 100,
+    price: 50,
     description: 'Removal of minor jinxes, hexes, or streaks of bad luck affecting daily life.'
   },
   {
-    id: 'moderate-curse-removal',
-    title: 'Moderate Curse Breaking',
+    id: 'medium-hex-dissolution',
+    title: 'Medium Hex Dissolution',
     category: 'curse-removal',
     magicTypes: ['divination', 'necromancy'],
     powerLevel: 'master',
-    price: 250,
+    price: 150,
     description: 'Breaking of moderate curses that cause persistent problems or ailments.'
   },
   {
-    id: 'major-curse-removal',
-    title: 'Major Familial Curse Dissolution',
+    id: 'major-curse-breaking',
+    title: 'Major Curse Breaking',
     category: 'curse-removal',
     magicTypes: ['divination', 'necromancy', 'alchemy'],
     powerLevel: 'archmage',
     price: 500,
     description: 'Complete dissolution of powerful, entrenched curses, including those passed through generations.'
   },
+  
   {
-    id: 'spirit-summoning',
-    title: 'Spirit Communication',
+    id: 'familiar-summoning',
+    title: 'Familiar Summoning',
     category: 'summoning-rituals',
-    magicTypes: ['necromancy', 'divination'],
+    magicTypes: ['elemental', 'divination'],
     powerLevel: 'apprentice',
-    price: 200,
-    description: 'Temporary summoning of spirits for communication or guidance.'
+    price: 100,
+    description: 'Summon a magical familiar to assist with simple tasks and provide companionship.'
   },
   {
-    id: 'elemental-summoning',
-    title: 'Elemental Entity Summoning',
+    id: 'elemental-conjuring',
+    title: 'Elemental Conjuring',
     category: 'summoning-rituals',
     magicTypes: ['elemental', 'transformation'],
     powerLevel: 'master',
-    price: 400,
-    description: 'Summon and bind elemental entities to perform specific tasks.'
+    price: 350,
+    description: 'Summon and bind elemental entities to perform specific tasks or provide elemental energy.'
   },
   {
-    id: 'demon-summoning',
-    title: 'Higher Entity Conjuration',
+    id: 'greater-entity-summoning',
+    title: 'Greater Entity Summoning',
     category: 'summoning-rituals',
     magicTypes: ['necromancy', 'divination', 'illusion'],
     powerLevel: 'archmage',
-    price: 800,
+    price: 1000,
     description: 'Summoning of powerful otherworldly entities under strict containment protocols.'
   },
+  
   {
-    id: 'weather-control',
-    title: 'Weather Adjustment',
-    category: 'elemental-manipulation',
-    magicTypes: ['elemental'],
-    powerLevel: 'master',
-    price: 300,
-    description: 'Create localized weather changes for events or agricultural needs.'
+    id: 'basic-healing-elixir',
+    title: 'Basic Healing Elixir',
+    category: 'potion-crafting',
+    magicTypes: ['alchemy'],
+    powerLevel: 'apprentice',
+    price: 20,
+    description: 'Simple healing potions for minor injuries, ailments, or fatigue recovery.'
   },
   {
-    id: 'basic-illusion',
-    title: 'Basic Sensory Illusion',
+    id: 'truth-serum',
+    title: 'Truth Serum',
+    category: 'potion-crafting',
+    magicTypes: ['alchemy', 'divination'],
+    powerLevel: 'master',
+    price: 100,
+    description: 'Potion that compels the drinker to speak truthfully for a limited time.'
+  },
+  {
+    id: 'transmutation-draught',
+    title: 'Transmutation Draught',
+    category: 'potion-crafting',
+    magicTypes: ['alchemy', 'transformation'],
+    powerLevel: 'archmage',
+    price: 300,
+    description: 'Powerful elixir that can temporarily transform the drinker or alter physical properties of objects.'
+  },
+  
+  {
+    id: 'minor-enchantment-rebinding',
+    title: 'Minor Enchantment Rebinding',
+    category: 'enchanted-object-repairs',
+    magicTypes: ['alchemy', 'transformation'],
+    powerLevel: 'apprentice',
+    price: 75,
+    description: 'Repair and rebind simple enchantments on everyday magical items.'
+  },
+  {
+    id: 'artifact-restoration',
+    title: 'Artifact Restoration',
+    category: 'enchanted-object-repairs',
+    magicTypes: ['alchemy', 'divination'],
+    powerLevel: 'master',
+    price: 250,
+    description: 'Restore damaged or degraded magical artifacts to their original condition and power.'
+  },
+  {
+    id: 'ancient-relic-reconstruction',
+    title: 'Ancient Relic Reconstruction',
+    category: 'enchanted-object-repairs',
+    magicTypes: ['alchemy', 'divination', 'necromancy'],
+    powerLevel: 'archmage',
+    price: 600,
+    description: 'Complete reconstruction of ancient or severely damaged magical relics with complex enchantments.'
+  },
+  
+  {
+    id: 'temporary-glamour',
+    title: 'Temporary Glamour',
     category: 'illusions-disguises',
     magicTypes: ['illusion'],
     powerLevel: 'apprentice',
-    price: 120,
-    description: 'Create convincing but simple illusions affecting one or two senses.'
+    price: 80,
+    description: 'Simple illusion to alter appearance or create minor sensory deceptions for a short period.'
   },
   {
-    id: 'fortune-telling',
-    title: 'Personal Fortune Reading',
+    id: 'identity-shift-spell',
+    title: 'Identity Shift Spell',
+    category: 'illusions-disguises',
+    magicTypes: ['illusion', 'transformation'],
+    powerLevel: 'master',
+    price: 250,
+    description: 'Complex illusion that creates a complete alternate identity, affecting multiple senses.'
+  },
+  {
+    id: 'full-reality-distortion',
+    title: 'Full Reality Distortion',
+    category: 'illusions-disguises',
+    magicTypes: ['illusion', 'transformation', 'elemental'],
+    powerLevel: 'archmage',
+    price: 700,
+    description: 'Powerful illusion that can alter perception of reality in an area, affecting all senses and even physical interactions.'
+  },
+  
+  {
+    id: 'fire-water-control',
+    title: 'Fire or Water Control',
+    category: 'elemental-manipulation',
+    magicTypes: ['elemental'],
+    powerLevel: 'apprentice',
+    price: 120,
+    description: 'Basic manipulation of fire or water elements for practical purposes or entertainment.'
+  },
+  {
+    id: 'storm-calling',
+    title: 'Storm Calling',
+    category: 'elemental-manipulation',
+    magicTypes: ['elemental'],
+    powerLevel: 'master',
+    price: 600,
+    description: 'Summon and control weather patterns including rain, wind, lightning, and thunder.'
+  },
+  {
+    id: 'cataclysmic-force',
+    title: 'Cataclysmic Force',
+    category: 'elemental-manipulation',
+    magicTypes: ['elemental', 'transformation'],
+    powerLevel: 'archmage',
+    price: 1500,
+    description: 'Harness tremendous elemental forces capable of reshaping terrain or creating localized natural phenomena.'
+  },
+  
+  {
+    id: 'spirit-communication',
+    title: 'Spirit Communication',
+    category: 'necromancy-assistance',
+    magicTypes: ['necromancy', 'divination'],
+    powerLevel: 'apprentice',
+    price: 150,
+    description: 'Establish temporary communication with spirits for guidance or closure.'
+  },
+  {
+    id: 'temporary-resurrection',
+    title: 'Temporary Resurrection',
+    category: 'necromancy-assistance',
+    magicTypes: ['necromancy', 'alchemy'],
+    powerLevel: 'master',
+    price: 800,
+    description: 'Briefly return a departed spirit to the physical realm for important conversations or unfinished business.'
+  },
+  {
+    id: 'soul-binding',
+    title: 'Soul Binding',
+    category: 'necromancy-assistance',
+    magicTypes: ['necromancy', 'transformation'],
+    powerLevel: 'archmage',
+    price: 2000,
+    description: 'Advanced ritual to bind a willing spirit to an object or location for protective or guidance purposes.'
+  },
+  
+  {
+    id: 'tarot-rune-reading',
+    title: 'Tarot or Rune Reading',
     category: 'divination',
     magicTypes: ['divination'],
     powerLevel: 'apprentice',
-    price: 90,
-    description: 'Insight into potential future paths and guidance on personal decisions.'
+    price: 40,
+    description: 'Basic divination reading to provide guidance on current situations or near future events.'
   },
   {
-    id: 'healing-potion',
-    title: 'Healing Elixir Crafting',
-    category: 'alchemy',
-    magicTypes: ['alchemy', 'transformation'],
+    id: 'personal-fate-revelation',
+    title: 'Personal Fate Revelation',
+    category: 'divination',
+    magicTypes: ['divination', 'illusion'],
     powerLevel: 'master',
-    price: 350,
-    description: 'Customized healing potions for specific ailments or recovery needs.'
+    price: 200,
+    description: 'Detailed reading of personal fate lines and potential future paths with guidance on critical decision points.'
+  },
+  {
+    id: 'cosmic-prophecy',
+    title: 'Cosmic Prophecy',
+    category: 'divination',
+    magicTypes: ['divination', 'necromancy'],
+    powerLevel: 'archmage',
+    price: 500,
+    description: 'Profound cosmic divination that reveals major life events and their connections to larger universal patterns.'
   }
 ];
 
@@ -228,19 +376,17 @@ export const findPowerLevel = (id: string): PowerLevel | undefined => {
   return powerLevels.find(level => level.id === id);
 };
 
-// Mock AI function to recommend services based on user input
 export const recommendService = (query: string): { category: MagicCategory | null, subService: SubService | null } => {
   const lowerQuery = query.toLowerCase();
   
-  // Simple keyword matching
   if (lowerQuery.includes('curse') || lowerQuery.includes('hex') || lowerQuery.includes('bad luck')) {
     const category = findCategory('curse-removal');
     let subService = null;
     
-    if (lowerQuery.includes('family') || lowerQuery.includes('generations') || lowerQuery.includes('ancient')) {
-      subService = findSubService('major-curse-removal');
-    } else if (lowerQuery.includes('moderate') || lowerQuery.includes('persistent')) {
-      subService = findSubService('moderate-curse-removal');
+    if (lowerQuery.includes('major') || lowerQuery.includes('powerful') || lowerQuery.includes('ancient')) {
+      subService = findSubService('major-curse-breaking');
+    } else if (lowerQuery.includes('medium') || lowerQuery.includes('moderate')) {
+      subService = findSubService('medium-hex-dissolution');
     } else {
       subService = findSubService('minor-curse-removal');
     }
@@ -248,45 +394,110 @@ export const recommendService = (query: string): { category: MagicCategory | nul
     return { category: category || null, subService };
   }
   
-  if (lowerQuery.includes('summon') || lowerQuery.includes('spirit') || lowerQuery.includes('entity') || lowerQuery.includes('demon')) {
+  if (lowerQuery.includes('summon') || lowerQuery.includes('conjure') || lowerQuery.includes('familiar') || lowerQuery.includes('entity')) {
     const category = findCategory('summoning-rituals');
     let subService = null;
     
-    if (lowerQuery.includes('demon') || lowerQuery.includes('powerful')) {
-      subService = findSubService('demon-summoning');
+    if (lowerQuery.includes('greater') || lowerQuery.includes('powerful') || lowerQuery.includes('demon')) {
+      subService = findSubService('greater-entity-summoning');
     } else if (lowerQuery.includes('element')) {
-      subService = findSubService('elemental-summoning');
+      subService = findSubService('elemental-conjuring');
     } else {
-      subService = findSubService('spirit-summoning');
+      subService = findSubService('familiar-summoning');
     }
     
     return { category: category || null, subService };
   }
   
-  if (lowerQuery.includes('element') || lowerQuery.includes('weather') || lowerQuery.includes('fire') || lowerQuery.includes('water')) {
-    const category = findCategory('elemental-manipulation');
-    const subService = findSubService('weather-control');
+  if (lowerQuery.includes('potion') || lowerQuery.includes('elixir') || lowerQuery.includes('healing') || lowerQuery.includes('truth') || lowerQuery.includes('transmutation')) {
+    const category = findCategory('potion-crafting');
+    let subService = null;
+    
+    if (lowerQuery.includes('transmut') || lowerQuery.includes('transform')) {
+      subService = findSubService('transmutation-draught');
+    } else if (lowerQuery.includes('truth')) {
+      subService = findSubService('truth-serum');
+    } else {
+      subService = findSubService('basic-healing-elixir');
+    }
+    
     return { category: category || null, subService };
   }
   
-  if (lowerQuery.includes('illusion') || lowerQuery.includes('disguise') || lowerQuery.includes('appearance')) {
+  if (lowerQuery.includes('repair') || lowerQuery.includes('restore') || lowerQuery.includes('fix') || lowerQuery.includes('enchant') || lowerQuery.includes('artifact') || lowerQuery.includes('relic')) {
+    const category = findCategory('enchanted-object-repairs');
+    let subService = null;
+    
+    if (lowerQuery.includes('ancient') || lowerQuery.includes('relic')) {
+      subService = findSubService('ancient-relic-reconstruction');
+    } else if (lowerQuery.includes('artifact') || lowerQuery.includes('restore')) {
+      subService = findSubService('artifact-restoration');
+    } else {
+      subService = findSubService('minor-enchantment-rebinding');
+    }
+    
+    return { category: category || null, subService };
+  }
+  
+  if (lowerQuery.includes('illusion') || lowerQuery.includes('disguise') || lowerQuery.includes('appearance') || lowerQuery.includes('glamour')) {
     const category = findCategory('illusions-disguises');
-    const subService = findSubService('basic-illusion');
+    let subService = null;
+    
+    if (lowerQuery.includes('reality') || lowerQuery.includes('distort')) {
+      subService = findSubService('full-reality-distortion');
+    } else if (lowerQuery.includes('identity') || lowerQuery.includes('shift')) {
+      subService = findSubService('identity-shift-spell');
+    } else {
+      subService = findSubService('temporary-glamour');
+    }
+    
     return { category: category || null, subService };
   }
   
-  if (lowerQuery.includes('future') || lowerQuery.includes('fortune') || lowerQuery.includes('see') || lowerQuery.includes('predict')) {
+  if (lowerQuery.includes('element') || lowerQuery.includes('fire') || lowerQuery.includes('water') || lowerQuery.includes('storm') || lowerQuery.includes('weather')) {
+    const category = findCategory('elemental-manipulation');
+    let subService = null;
+    
+    if (lowerQuery.includes('cataclysm') || lowerQuery.includes('force')) {
+      subService = findSubService('cataclysmic-force');
+    } else if (lowerQuery.includes('storm') || lowerQuery.includes('weather')) {
+      subService = findSubService('storm-calling');
+    } else {
+      subService = findSubService('fire-water-control');
+    }
+    
+    return { category: category || null, subService };
+  }
+  
+  if (lowerQuery.includes('necromancy') || lowerQuery.includes('spirit') || lowerQuery.includes('soul') || lowerQuery.includes('resurrect')) {
+    const category = findCategory('necromancy-assistance');
+    let subService = null;
+    
+    if (lowerQuery.includes('soul') || lowerQuery.includes('bind')) {
+      subService = findSubService('soul-binding');
+    } else if (lowerQuery.includes('resurrect') || lowerQuery.includes('return')) {
+      subService = findSubService('temporary-resurrection');
+    } else {
+      subService = findSubService('spirit-communication');
+    }
+    
+    return { category: category || null, subService };
+  }
+  
+  if (lowerQuery.includes('divin') || lowerQuery.includes('future') || lowerQuery.includes('fortune') || lowerQuery.includes('prophecy') || lowerQuery.includes('tarot') || lowerQuery.includes('rune')) {
     const category = findCategory('divination');
-    const subService = findSubService('fortune-telling');
+    let subService = null;
+    
+    if (lowerQuery.includes('cosmic') || lowerQuery.includes('prophecy')) {
+      subService = findSubService('cosmic-prophecy');
+    } else if (lowerQuery.includes('fate') || lowerQuery.includes('personal')) {
+      subService = findSubService('personal-fate-revelation');
+    } else {
+      subService = findSubService('tarot-rune-reading');
+    }
+    
     return { category: category || null, subService };
   }
   
-  if (lowerQuery.includes('potion') || lowerQuery.includes('elixir') || lowerQuery.includes('heal') || lowerQuery.includes('transform')) {
-    const category = findCategory('alchemy');
-    const subService = findSubService('healing-potion');
-    return { category: category || null, subService };
-  }
-  
-  // Default to null if no match
   return { category: null, subService: null };
 };

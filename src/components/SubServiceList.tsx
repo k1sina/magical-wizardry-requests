@@ -36,7 +36,7 @@ const SubServiceList = ({
               <span className="text-wizard-gold font-medium">${service.price}</span>
             </div>
             <p className="text-sm text-wizard-gold/70 mt-1">
-              ({service.magicTypes.join(', ')} – {service.powerLevel})
+              ({service.magicTypes.map(type => type.charAt(0).toUpperCase() + type.slice(1)).join(', ')} – {service.powerLevel.charAt(0).toUpperCase() + service.powerLevel.slice(1)})
             </p>
           </div>
         ))}
