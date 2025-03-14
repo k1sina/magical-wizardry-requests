@@ -31,7 +31,7 @@ export const categories: MagicCategory[] = [
     title: 'Enchanted Object Repairs',
     subtitle: 'Restoring magical items and artifacts',
     description: 'Professional restoration and repair of enchanted items, from simple charms to ancient powerful artifacts.',
-    image: '/magicCategories/enchanted-object repairs.jpg',
+    image: '/magicCategories/enchanted-object-repairs.jpg',
     priceRange: '$75 - $600'
   },
   {
