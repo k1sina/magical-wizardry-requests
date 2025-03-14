@@ -21,7 +21,7 @@ const CategoryCard = ({ category, isSelected, onSelect }: CategoryCardProps) => 
           className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
         />
       </div>
-      <h3 className="text-xl mb-1 text-center">{category.title}</h3>
+      <h3 className="text-xl mb-1 text-center font-cinzel">{category.title}</h3>
       <p className="text-center text-sm text-wizard-gold/70">{category.subtitle}</p>
     </div>
   );

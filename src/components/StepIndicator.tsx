@@ -62,16 +62,11 @@ const StepIndicator = () => {
             </div>
 
             {/* Step name below the circle */}
-            <div
-              className="absolute font-cinzel text-wizard-gold/70 text-xs md:text-sm whitespace-nowrap"
-              style={{
-                top: '3rem',
-                left: '50%',
-                transform: 'translateX(-50%)'
-              }}
+            <span
+              className="absolute top-12 font-cinzel text-wizard-gold/70 text-xs md:text-sm whitespace-nowrap transform -translate-x-1/2 left-1/2"
             >
               {step.name}
-            </div>
+            </span>
           </div>
         ))}
       </div>

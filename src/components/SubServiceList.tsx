@@ -6,6 +6,7 @@ type SubServiceListProps = {
   services: SubService[];
   categoryTitle: string;
   categoryDescription: string;
+  categoryImage: string;
   selectedService: SubService | null;
   onSelectService: (service: SubService) => void;
 };
@@ -14,32 +15,47 @@ const SubServiceList = ({
   services, 
   categoryTitle, 
   categoryDescription,
+  categoryImage,
   selectedService, 
   onSelectService 
 }: SubServiceListProps) => {
   return (
-    <div className="bg-wizard-dark-alt/30 border border-wizard-gold/20 rounded-lg p-6 animate-fade-in">
-      <h2 className="text-2xl mb-2">{categoryTitle}</h2>
-      <p className="text-wizard-gold/70 mb-6">{categoryDescription}</p>
-      
-      <div className="space-y-3">
-        {services.map((service) => (
-          <div 
-            key={service.id}
-            className={`wizard-list-item cursor-pointer ${
-              selectedService?.id === service.id ? 'wizard-list-item-selected' : ''
-            }`}
-            onClick={() => onSelectService(service)}
-          >
-            <div className="flex justify-between items-center">
-              <h4 className="text-lg font-semibold">{service.title}</h4>
-              <span className="text-wizard-gold font-medium">${service.price}</span>
-            </div>
-            <p className="text-sm text-wizard-gold/70 mt-1">
-              ({service.magicTypes.map(type => type.charAt(0).toUpperCase() + type.slice(1)).join(', ')} – {service.powerLevel.charAt(0).toUpperCase() + service.powerLevel.slice(1)})
-            </p>
+    <div className="bg-wizard-dark-alt/30 border border-wizard-gold/20 rounded-lg overflow-hidden animate-fade-in">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+        {/* Left column with image */}
+        <div className="h-[500px] overflow-hidden">
+          <img
+            src={categoryImage}
+            alt={categoryTitle}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
+        {/* Right column with service list */}
+        <div className="p-6 flex flex-col">
+          <h2 className="text-2xl font-cinzel text-wizard-gold mb-2">{categoryTitle}</h2>
+          <p className="text-wizard-gold/70 mb-6">{categoryDescription}</p>
+          
+          <div className="space-y-3 flex-grow">
+            {services.map((service) => (
+              <div 
+                key={service.id}
+                className={`border border-wizard-gold/30 rounded-lg p-4 cursor-pointer transition-all duration-300 ${
+                  selectedService?.id === service.id ? 'border-wizard-gold bg-wizard-gold/10' : 'hover:border-wizard-gold/60'
+                }`}
+                onClick={() => onSelectService(service)}
+              >
+                <div className="flex justify-between items-center">
+                  <h4 className="text-lg font-semibold">{service.title}</h4>
+                  <span className="text-wizard-gold font-medium">${service.price}</span>
+                </div>
+                <p className="text-sm text-wizard-gold/70 mt-1">
+                  ({service.magicTypes.map(type => type.charAt(0).toUpperCase() + type.slice(1)).join(', ')} – {service.powerLevel.charAt(0).toUpperCase() + service.powerLevel.slice(1)})
+                </p>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );
