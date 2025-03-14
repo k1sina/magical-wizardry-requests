@@ -23,13 +23,16 @@ const Step1Occasion = () => {
   useEffect(() => {
     if (selectedCategoryId) {
       const category = categories.find(cat => cat.id === selectedCategoryId);
-      setSelectedCategoryState(category || null);
-      setSubServices(getSubServicesByCategory(selectedCategoryId));
+      if (category) {
+        setSelectedCategoryState(category);
+        setCategory(category); // Ensure category is set in the context
+        setSubServices(getSubServicesByCategory(selectedCategoryId));
+      }
     } else {
       setSubServices([]);
       setSelectedCategoryState(null);
     }
-  }, [selectedCategoryId]);
+  }, [selectedCategoryId, setCategory]);
 
   const handleCategorySelect = (category: typeof categories[0]) => {
     console.log("Category selected:", category.id);

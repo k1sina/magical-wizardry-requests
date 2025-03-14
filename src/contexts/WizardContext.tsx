@@ -1,5 +1,5 @@
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useCallback } from 'react';
 
 // Define types for our wizard booking process
 export type MagicCategory = {
@@ -83,41 +83,42 @@ export const WizardProvider = ({ children }: { children: ReactNode }) => {
   const [currentStep, setCurrentStep] = useState(1);
   const [bookingDetails, setBookingDetails] = useState<BookingDetails>(defaultBookingDetails);
 
-  const setCategory = (category: MagicCategory | null) => {
-    setBookingDetails({ ...bookingDetails, category });
-  };
+  const setCategory = useCallback((category: MagicCategory | null) => {
+    console.log("Setting category in context:", category?.id);
+    setBookingDetails(prev => ({ ...prev, category }));
+  }, []);
 
-  const setSubService = (subService: SubService | null) => {
-    setBookingDetails({ ...bookingDetails, subService });
-  };
+  const setSubService = useCallback((subService: SubService | null) => {
+    setBookingDetails(prev => ({ ...prev, subService }));
+  }, []);
 
-  const setMagicType = (magicType: MagicType | null) => {
-    setBookingDetails({ ...bookingDetails, magicType });
-  };
+  const setMagicType = useCallback((magicType: MagicType | null) => {
+    setBookingDetails(prev => ({ ...prev, magicType }));
+  }, []);
 
-  const setPowerLevel = (powerLevel: PowerLevel | null) => {
-    setBookingDetails({ ...bookingDetails, powerLevel });
-  };
+  const setPowerLevel = useCallback((powerLevel: PowerLevel | null) => {
+    setBookingDetails(prev => ({ ...prev, powerLevel }));
+  }, []);
 
-  const setScheduleType = (type: ScheduleType) => {
-    setBookingDetails({
-      ...bookingDetails,
-      schedule: { ...bookingDetails.schedule, type },
-    });
-  };
+  const setScheduleType = useCallback((type: ScheduleType) => {
+    setBookingDetails(prev => ({
+      ...prev,
+      schedule: { ...prev.schedule, type },
+    }));
+  }, []);
 
-  const setScheduleDate = (date: Date | null) => {
-    setBookingDetails({
-      ...bookingDetails,
-      schedule: { ...bookingDetails.schedule, date },
-    });
-  };
+  const setScheduleDate = useCallback((date: Date | null) => {
+    setBookingDetails(prev => ({
+      ...prev,
+      schedule: { ...prev.schedule, date },
+    }));
+  }, []);
 
-  const setCustomRequest = (request: string) => {
-    setBookingDetails({ ...bookingDetails, customRequest: request });
-  };
+  const setCustomRequest = useCallback((request: string) => {
+    setBookingDetails(prev => ({ ...prev, customRequest: request }));
+  }, []);
 
-  const calculatePrice = (): number => {
+  const calculatePrice = useCallback((): number => {
     let basePrice = bookingDetails.subService?.price || 0;
     
     // Apply power level multiplier
@@ -131,12 +132,12 @@ export const WizardProvider = ({ children }: { children: ReactNode }) => {
     }
     
     return basePrice;
-  };
+  }, [bookingDetails]);
 
-  const resetBooking = () => {
+  const resetBooking = useCallback(() => {
     setBookingDetails(defaultBookingDetails);
     setCurrentStep(1);
-  };
+  }, []);
 
   return (
     <WizardContext.Provider

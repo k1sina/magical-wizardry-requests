@@ -69,6 +69,9 @@ const NavigationButtons = ({
   };
   
   const handleCustomize = () => {
+    // Debug logs to see what we have in state
+    console.log("Current category in bookingDetails:", bookingDetails.category);
+    
     if (bookingDetails.category) {
       setCurrentStep(2);
     } else {
@@ -81,6 +84,9 @@ const NavigationButtons = ({
   };
   
   const handleCheckout = () => {
+    // Debug logs
+    console.log("Attempting checkout with category:", bookingDetails.category);
+    
     if (!bookingDetails.category) {
       toast({
         title: "Selection Required",
