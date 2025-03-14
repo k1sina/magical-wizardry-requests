@@ -11,8 +11,10 @@ type CategoryCardProps = {
 const CategoryCard = ({ category, isSelected, onSelect }: CategoryCardProps) => {
   return (
     <div 
-      className={`wizard-card h-64 cursor-pointer ${isSelected ? 'wizard-card-selected' : ''}`}
+      className={`wizard-card h-64 cursor-pointer transition-all duration-300 ${isSelected ? 'wizard-card-selected ring-2 ring-wizard-gold' : 'hover:border-wizard-gold/60'}`}
       onClick={() => onSelect(category)}
+      role="button"
+      aria-pressed={isSelected}
     >
       <div className="w-full h-36 overflow-hidden rounded mb-3">
         <img 

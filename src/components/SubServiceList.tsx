@@ -19,11 +19,15 @@ const SubServiceList = ({
   selectedService, 
   onSelectService 
 }: SubServiceListProps) => {
+  if (!services || services.length === 0) {
+    return null;
+  }
+
   return (
-    <div className="bg-wizard-dark-alt/30 border border-wizard-gold/20 rounded-lg overflow-hidden animate-fade-in">
+    <div className="bg-wizard-dark-alt/30 border border-wizard-gold/20 rounded-lg overflow-hidden animate-fade-in mt-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
         {/* Left column with image */}
-        <div className="h-[500px] overflow-hidden">
+        <div className="h-[400px] overflow-hidden">
           <img
             src={categoryImage}
             alt={categoryTitle}

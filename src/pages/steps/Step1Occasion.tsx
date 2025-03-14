@@ -15,17 +15,24 @@ const Step1Occasion = () => {
   const [subServices, setSubServices] = useState(
     selectedCategoryId ? getSubServicesByCategory(selectedCategoryId) : []
   );
+  const [selectedCategory, setSelectedCategoryState] = useState(
+    bookingDetails.category || null
+  );
 
   // Update subServices when selectedCategoryId changes
   useEffect(() => {
     if (selectedCategoryId) {
+      const category = categories.find(cat => cat.id === selectedCategoryId);
+      setSelectedCategoryState(category || null);
       setSubServices(getSubServicesByCategory(selectedCategoryId));
     } else {
       setSubServices([]);
+      setSelectedCategoryState(null);
     }
   }, [selectedCategoryId]);
 
   const handleCategorySelect = (category: typeof categories[0]) => {
+    console.log("Category selected:", category.id);
     setSelectedCategoryId(category.id);
     setCategory(category);
     // Reset subService selection when changing category
@@ -60,17 +67,15 @@ const Step1Occasion = () => {
         </div>
       </div>
 
-      {selectedCategoryId && bookingDetails.category && (
-        <div className="mt-12">
-          <SubServiceList
-            services={subServices}
-            categoryTitle={bookingDetails.category.title}
-            categoryDescription={bookingDetails.category.subtitle}
-            categoryImage={bookingDetails.category.image}
-            selectedService={bookingDetails.subService}
-            onSelectService={setSubService}
-          />
-        </div>
+      {selectedCategory && (
+        <SubServiceList
+          services={subServices}
+          categoryTitle={selectedCategory.title}
+          categoryDescription={selectedCategory.description}
+          categoryImage={selectedCategory.image}
+          selectedService={bookingDetails.subService}
+          onSelectService={setSubService}
+        />
       )}
 
       <NavigationButtons showCustomize showCheckout />
