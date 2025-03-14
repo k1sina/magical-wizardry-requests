@@ -298,37 +298,37 @@ export const magicTypes: MagicType[] = [
     id: 'elemental',
     name: 'Elemental',
     description: 'Magic that manipulates the four primal elements: earth, air, fire, and water.',
-    image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    image: '/public/magicTypes/elemental.jpg'
   },
   {
     id: 'necromancy',
     name: 'Necromancy',
     description: 'Magic involving spirits, ghosts, and the essence of life and death.',
-    image: 'https://images.unsplash.com/photo-1473091534298-04dcbce3278c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    image: '/public/magicTypes/necromancy.jpg'
   },
   {
     id: 'illusion',
     name: 'Illusion',
     description: 'Magic that alters perception and creates convincing deceptions.',
-    image: 'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    image: '/public/magicTypes/illusion.jpg'
   },
   {
     id: 'alchemy',
     name: 'Alchemy',
     description: 'Magic focused on transformation through potions, elixirs, and material transmutation.',
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    image: '/public/magicTypes/alchemy.jpg'
   },
   {
     id: 'divination',
     name: 'Divination',
     description: 'Magic that reveals hidden knowledge, glimpses the future, or finds lost things.',
-    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    image: '/public/magicTypes/divination.jpg'
   },
   {
     id: 'transformation',
     name: 'Transformation',
     description: 'Magic that changes form, function, or essential qualities of beings or objects.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    image: '/public/magicTypes/transformation.jpg'
   }
 ];
 
@@ -337,21 +337,21 @@ export const powerLevels: PowerLevel[] = [
     id: 'apprentice',
     name: 'Apprentice',
     description: 'Entry-level magical services, suitable for minor issues and simple enchantments.',
-    image: 'https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    image: '/public/magicLevels/apprentice.jpg',
     multiplier: 1.0
   },
   {
     id: 'master',
     name: 'Master',
     description: 'Advanced services by experienced wizards, appropriate for complex magical needs.',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    image: '/public/magicLevels/master.jpg',
     multiplier: 1.5
   },
   {
     id: 'archmage',
     name: 'Archmage',
     description: 'Elite services by our most powerful practitioners, for the most demanding magical requirements.',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    image: '/public/magicLevels/archmage.jpg',
     multiplier: 2.5
   }
 ];
